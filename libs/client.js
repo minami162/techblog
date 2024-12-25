@@ -3,8 +3,8 @@ import { createClient } from 'microcms-js-sdk';
 
 // microCMSクライアントを作成
 export const client = createClient({
-  serviceDomain: process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN, // サービスドメインを入力
-  apiKey: process.env.NEXT_PUBLIC_MICROCMS_API_KEY, // APIキーを入力
+  serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN, // サービスドメインを入力
+  apiKey: process.env.MICROCMS_API_KEY, // APIキーを入力
 });
 
 // APIからリスト形式のデータを取得する関数
