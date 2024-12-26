@@ -1,5 +1,6 @@
 // app/techblog/page.js
 import { getBlogs } from '@/libs/client';
+import Header from './header/page'
 
 const BlogPage = async () => {
   // APIからデータを取得
@@ -7,6 +8,7 @@ const BlogPage = async () => {
 
   return (
     <div>
+      <Header/>
       <h1>ブログ一覧</h1>
       <ul>
         {/* データが存在する場合、リストを表示 */}
