@@ -1,4 +1,10 @@
+import Header from '../header/page'
 export default function CategoryPage() {
-    return <h1>Welcome to the Category Page!</h1>;
+    return (
+      <>
+      <Header />
+      <h1>Welcome to the Category Page!</h1>
+      </>
+    );
   }
   

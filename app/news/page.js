@@ -1,4 +1,10 @@
+import Header from '../header/page'
 export default function NewsPage() {
-    return <h1>Welcome to the News Page!</h1>;
+    return(
+      <>
+      <Header />
+      <h1>Welcome to the News Page!</h1>;
+      </>
+    );
   }
   
