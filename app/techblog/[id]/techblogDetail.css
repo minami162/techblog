@@ -1,0 +1,65 @@
+/* app/techblog/[id]/techblogDetail.css */
+.blog-detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* コンテナ背景色（白） */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .blog-thumbnail {
+    width: 100%; /* 幅をコンテナに合わせる */
+    height: auto; /* 高さは自動調整 */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    object-fit: cover; /* 画像が枠にフィットするように */
+    max-height: 500px; /* 最大高さを500pxに設定（必要に応じて調整） */
+  }
+  
+  .blog-date {
+    font-size: 1.2rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .blog-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+  }
+  
+  .blog-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  .blog-body ul {
+    margin: 20px 0;
+  }
+  
+  .blog-body a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .blog-body a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ページ全体の背景色を指定 */
+  body {
+    background-color: #f8f8f8; /* URLページの背景色 */
+  }
+  
