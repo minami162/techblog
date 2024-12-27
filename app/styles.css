@@ -1,0 +1,68 @@
+/* styles.css */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* レスポンシブ対応 */
+    gap: 20px; /* カード間のスペースを広げてゆとりを持たせる */
+    padding: 20px;
+  }
+  
+  .blog-card {
+    background-color: #fff; /* 背景を白に */
+    border-radius: 12px; /* 角を少し丸くする */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
+    width: 250px; /* 幅を固定 */
+    height: 350px; /* 高さを固定 */
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; /* カードを中央揃え */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ソフトな影 */
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-8px); /* ホバー時に浮き上がる */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
+  }
+  
+  .blog-thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* 画像を中央にトリミング */
+    border-bottom: 2px solid #f0f0f0; /* 画像下に境界線 */
+  }
+  
+  .blog-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* タイトルと概要を整列 */
+  }
+  
+  .blog-date {
+    font-size: 12px;
+    color: #999; /* ソフトなグレー */
+    margin-bottom: 8px;
+  }
+  
+  .blog-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    color: #333;
+    text-align: center; /* タイトルを中央揃え */
+  }
+  
+  .blog-summary {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6; /* 概要の読みやすさを向上 */
+    text-align: center; /* 概要を中央揃え */
+  }
+  
+  @media (hover: hover) {
+    .blog-card:hover .blog-thumbnail {
+      filter: brightness(0.9); /* ホバー時に画像を少し暗く */
+    }
+  }
+  
