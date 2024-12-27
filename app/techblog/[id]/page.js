@@ -1,6 +1,5 @@
-// app/techblog/[id]/page.js
 import { getBlogById } from '@/libs/client';
-import './techblogDetail.css'; // スタイルシートをインポート
+import '@/app/styles.css'; // スタイルシートをインポート
 
 const BlogDetailPage = async ({ params }) => {
   const blog = await getBlogById(params.id);
@@ -10,7 +9,7 @@ const BlogDetailPage = async ({ params }) => {
   }
 
   return (
-    <div className="blog-detail-container">
+    <div className="blog-detail-container"> {/* 詳細ページのスタイルクラス */}
       {/* 記事タイトル */}
       <h1 className="blog-title">{blog.title}</h1>
 
@@ -25,7 +24,11 @@ const BlogDetailPage = async ({ params }) => {
 
       {/* 投稿日 */}
       <p className="blog-date">
-        {new Date(blog.date).toLocaleDateString()}
+        {new Date(blog.date).toLocaleDateString('ja-JP', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
       </p>
 
       {/* 記事内容 */}

@@ -1,68 +1,144 @@
-/* styles.css */
+/* 共通スタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* 提示されたURLと同じ背景色 */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* トップページのブログカード（元のスタイルを保持） */
 .blog-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* レスポンシブ対応 */
-    gap: 20px; /* カード間のスペースを広げてゆとりを持たせる */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     padding: 20px;
-  }
-  
-  .blog-card {
-    background-color: #fff; /* 背景を白に */
-    border-radius: 12px; /* 角を少し丸くする */
+}
+
+.blog-card {
+    background-color: #fff;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
-    width: 250px; /* 幅を固定 */
-    height: 350px; /* 高さを固定 */
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto; /* カードを中央揃え */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ソフトな影 */
-  }
-  
-  .blog-card:hover {
-    transform: translateY(-8px); /* ホバー時に浮き上がる */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
-  }
-  
-  .blog-thumbnail {
     width: 100%;
-    height: 150px;
-    object-fit: cover; /* 画像を中央にトリミング */
-    border-bottom: 2px solid #f0f0f0; /* 画像下に境界線 */
-  }
-  
-  .blog-content {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.blog-content {
     padding: 20px;
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* タイトルと概要を整列 */
-  }
-  
-  .blog-date {
+}
+
+.blog-date {
     font-size: 12px;
-    color: #999; /* ソフトなグレー */
+    color: #999;
     margin-bottom: 8px;
-  }
-  
-  .blog-title {
-    font-size: 18px;
+}
+
+.blog-title {
+    font-size: 20px;
     font-weight: bold;
-    margin: 0 0 10px;
     color: #333;
-    text-align: center; /* タイトルを中央揃え */
-  }
-  
-  .blog-summary {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.blog-summary {
     font-size: 14px;
     color: #555;
-    line-height: 1.6; /* 概要の読みやすさを向上 */
-    text-align: center; /* 概要を中央揃え */
-  }
-  
-  @media (hover: hover) {
-    .blog-card:hover .blog-thumbnail {
-      filter: brightness(0.9); /* ホバー時に画像を少し暗く */
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ブログ詳細ページ */
+.blog-detail-container {
+    max-width: 800px;
+    margin: 40px auto; /* 上下の余白を広げる */
+    padding: 20px;
+    background-color: #fff; /* コンテナの背景色を白に設定 */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ソフトな影 */
+}
+
+.blog-detail-container .blog-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #222;
+}
+
+.blog-detail-container .blog-thumbnail {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 画像の影 */
+    max-height: 400px; /* 最大高さを設定 */
+}
+
+.blog-detail-container .blog-date {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.blog-detail-container .blog-body {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.8;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.blog-detail-container .blog-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.blog-detail-container .blog-body ul {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.blog-detail-container .blog-body ul li {
+    list-style-type: disc;
+    margin-bottom: 10px;
+}
+
+.blog-detail-container .blog-body a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.blog-detail-container .blog-body a:hover {
+    text-decoration: underline;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .blog-detail-container {
+        padding: 15px;
     }
-  }
-  
+
+    .blog-detail-container .blog-title {
+        font-size: 2rem;
+    }
+}

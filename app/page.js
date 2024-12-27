@@ -10,7 +10,7 @@ const BlogPage = async () => {
   const blogs = await getBlogs();
 
   return (
-    <div>
+    <div className="top-page"> {/* トップページ用のクラスを追加 */}
       <Header />
       <PageTitle title="ブログ一覧" title_en="blog" />
 
@@ -34,7 +34,7 @@ const BlogPage = async () => {
                     {new Date(blog.date).toLocaleDateString()}
                   </p>
                   {/* タイトル */}
-                  <h2 className="blog-title">{blog.title}</h2>
+                  <h4 className="blog-title">{blog.title}</h4>
                   {/* 概要 */}
                   <p className="blog-summary">{blog.summary}</p>
                 </div>
