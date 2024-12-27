@@ -1,7 +1,7 @@
 import { getBlogs } from '@/libs/client';
 import Link from 'next/link'; // Linkコンポーネントをインポート
 
-import Header from './header/page';
+import Header from './components/header/page';
 import PageTitle from './components/title/page';
 import './styles.css'; // スタイルを適用するためのCSSファイルを用意
 
