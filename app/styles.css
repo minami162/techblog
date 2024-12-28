@@ -1,159 +1,101 @@
-/* 共通スタイル */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9; /* 提示されたURLと同じ背景色 */
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-/* トップページのブログカード（元のスタイルを保持） */
+/* 全体構造 */
 .blog-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
     padding: 20px;
-}
-
-.blog-card {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.blog-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.blog-thumbnail {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #f0f0f0;
-}
-
-.blog-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-date {
-    font-size: 12px;
-    color: #999;
-    margin-bottom: 8px;
-}
-
-.blog-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin: 10px 0;
-}
-
-.blog-summary {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* ブログ詳細ページ */
-.blog-detail-container {
-    max-width: 800px;
-    margin: 40px auto; /* 上下の余白を広げる */
-    padding: 20px;
-    background-color: #fff; /* コンテナの背景色を白に設定 */
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ソフトな影 */
-}
-
-.blog-detail-container .blog-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-    color: #222;
-}
-
-.blog-detail-container .blog-thumbnail {
-    width: 100%;
-    height: auto;
-    margin: 20px 0;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 画像の影 */
-    max-height: 400px; /* 最大高さを設定 */
-}
-
-.blog-detail-container .blog-date {
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
+  }
+  
+  /* カテゴリセクション */
+  .category-section {
+    margin-bottom: 40px;
+  }
+  
+  .category-title-box {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border-left: 5px solid #000000; /* カテゴリを強調 */
     margin-bottom: 20px;
-}
-
-.blog-detail-container .blog-body {
-    font-size: 1.2rem;
-    color: #444;
-    line-height: 1.8;
-    margin-top: 20px;
-    text-align: justify;
-}
-
-.blog-detail-container .blog-body img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.blog-detail-container .blog-body ul {
-    padding-left: 20px;
-    margin: 20px 0;
-}
-
-.blog-detail-container .blog-body ul li {
-    list-style-type: disc;
-    margin-bottom: 10px;
-}
-
-.blog-detail-container .blog-body a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.blog-detail-container .blog-body a:hover {
-    text-decoration: underline;
-}
-
-/* モバイル対応 */
-@media (max-width: 768px) {
-    .blog-detail-container {
-        padding: 15px;
-    }
-
-    .blog-detail-container .blog-title {
-        font-size: 2rem;
-    }
-}
-
-.category-section {
-    margin-bottom: 2rem;
   }
   
   .category-title {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
+    font-weight: bold;
+    margin: 0;
   }
   
+  /* カテゴリラベル */
+  .category-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #000000;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  
+  /* カードデザイン */
   .category-blogs {
-    align-items:center;
+    display: flex;
+    flex-wrap: wrap; /* 横並びで詰める */
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .blog-card {
+    position: relative; /* カテゴリラベル用 */
+    width: 300px;
+    height: 400px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 20px auto;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  /* コンテンツ部分 */
+  .blog-content {
+    margin-top: 10px;
+  }
+  
+  .blog-date {
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  .blog-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .blog-summary {
+    font-size: 0.9rem;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   
