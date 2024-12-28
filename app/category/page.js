@@ -1,9 +1,9 @@
 import { getBlogs } from '@/libs/client';
-import Link from 'next/link'; // Linkコンポーネントをインポート
+import Link from 'next/link';
 
 import Header from '../components/header/page';
 import PageTitle from '../components/title/page';
-import '../styles.css'; // スタイルを適用するためのCSSファイルを用意
+import '../styles.css';
 
 const BlogPage = async () => {
   const blogs = await getBlogs();
@@ -22,25 +22,24 @@ const BlogPage = async () => {
       <Header />
       <PageTitle title="カテゴリー一覧" title_en="category" />
 
-      <div className="blog-container">
+      <div className="blog-container-vertical">
         {Object.entries(categorizedBlogs).map(([category, blogs]) => (
           <div key={category} className="category-section">
             <div className="category-title-box">
               <h3 className="category-title">{category}</h3>
             </div>
-            <div className="category-blogs">
+            <div className="category-blogs-vertical">
               {blogs.map((blog) => (
                 <Link key={blog.id} href={`/techblog/${blog.id}`} passHref>
-                  <div className="blog-card">
-                    <span className="category-label">{category}</span>
+                  <div className="blog-card-vertical">
                     {blog.thumbnail && (
                       <img
                         src={blog.thumbnail.url}
                         alt={blog.title}
-                        className="blog-thumbnail"
+                        className="blog-thumbnail-vertical"
                       />
                     )}
-                    <div className="blog-content">
+                    <div className="blog-content-vertical">
                       <p className="blog-date">
                         {new Date(blog.date).toLocaleDateString()}
                       </p>
