@@ -198,7 +198,12 @@ body {
     font-size: 16px; /* タイトルの文字サイズを設定 */
     font-weight: bold; /* タイトルを太字にする */
     margin: 5px 0; /* タイトル上下に余白を追加 */
-    color: #222; /* タイトルの文字色を濃いグレーに設定 */
+    color: #000000; /* タイトルの文字色を濃いグレーに設定 */
+    position: absolute; /* 要素の位置を自由に調整 */
+    left: 50%; /* 左から50%の位置 */
+    transform: translate(-50%, -50%); /* 自分の幅と高さの半分だけ逆方向に移動 */
+    width: 200px; /* 必要に応じて絶対値でサイズ指定 */
+    text-align: center; /* テキストを中央揃え */
 }
 
 .blog-content-vertical .blog-summary {
@@ -206,6 +211,13 @@ body {
     color: #555; /* 本文要約の文字色を設定 */
     line-height: 1.4; /* 行間を広げて読みやすくする */
     margin-top: 5px; /* 本文要約の上に余白を追加 */
+    position: absolute; /* 要素の位置を自由に調整 */
+
+  left: 50%; /* 左から50%の位置 */
+  transform: translate(-47%, 90%); /* 自分の幅と高さの半分だけ逆方向に移動 */
+  width: 200px; /* 必要に応じて絶対値でサイズ指定 */
+  text-align: center; /* テキストを中央揃え */
+  
 }
 
 /* モバイル対応 */
