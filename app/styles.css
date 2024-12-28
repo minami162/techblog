@@ -220,6 +220,12 @@ body {
     .blog-card-vertical {
         height: auto; /* スマホでは高さを自動調整 */
     }
+
+    .blog-thumbnail-vertical {
+        
+        object-fit: cover;
+        border-right: 1px solid #eaeaea;
+    }
 }
 
 
