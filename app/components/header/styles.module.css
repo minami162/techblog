@@ -1,0 +1,40 @@
+.header {
+    background-color: #f8f9fa; /* 背景色 */
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .button {
+    padding: 12px 24px;
+    border: 1px solid #333; /* 黒の枠線 */
+    border-radius: 8px; /* 角を少し丸く */
+    background-color: transparent; /* 背景を透明に */
+    color: #333; /* 黒の文字 */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* 滑らかなアニメーション */
+    margin:10px;
+  }
+  
+  .button:hover {
+    background-color: #333; /* ホバー時の背景色 */
+    color: #fff; /* ホバー時の文字色 */
+    transform: translateY(-2px); /* 少し浮き上がる */
+  }
+  
+  .button:active {
+    transform: translateY(0); /* クリック時の戻り */
+    opacity: 0.8; /* クリック時に少し透明に */
+  }
+  
+  .hr{
+    border:1px;
+    margin-top:5px;
+  }

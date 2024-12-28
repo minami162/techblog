@@ -22,7 +22,7 @@ const BlogPage = async () => {
   return (
     <div className="top-page">
       <Header />
-      <PageTitle title="新着情報" title_en="news" />
+      <PageTitle title="カテゴリー一覧" title_en="category" />
 
       <div className="blog-container">
         {/* カテゴリごとにブログを表示 */}
