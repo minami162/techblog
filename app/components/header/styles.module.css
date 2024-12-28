@@ -61,3 +61,9 @@
   }
   
   
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .button{
+    margin:5px;
+  }
+}
