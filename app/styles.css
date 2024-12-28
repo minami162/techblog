@@ -257,6 +257,16 @@ body {
     outline: none; /* ボタンのフォーカスリングを非表示 */
 }
 
+.read-more-button::before,
+.read-more-button::after {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    transition: all 0.3s ease;
+}
 
 .read-more-button::before {
     top: -10px;
@@ -268,18 +278,6 @@ body {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.read-more-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0; /* 初期状態では塗りつぶしなし */
-    height: 100%;
-    background-color: black; /* 塗りつぶし時の背景色 */
-    z-index: -1; /* 背景を文字の後ろに配置 */
-    transition: width 0.4s ease; /* 塗りつぶしのアニメーション */
 }
 
 
