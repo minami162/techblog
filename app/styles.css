@@ -1,179 +1,232 @@
 /* 共通スタイル */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9; /* 提示されたURLと同じ背景色 */
-    margin: 0;
-    padding: 0;
-    color: #333;
+    font-family: 'Arial', sans-serif; /* 全体で使用するフォントを指定 */
+    background-color: #f4f4f7; /* ページ全体の背景色を柔らかい色に設定 */
+    margin: 0; /* ページ全体の余白をなくす */
+    padding: 0; /* ページ全体の内側の余白をなくす */
+    color: #333; /* 文字の基本色を濃いグレーに設定 */
+    line-height: 1.6; /* 行間を調整して読みやすくする */
 }
 
-/* トップページのブログカード（元のスタイルを保持） */
+/* トップページのブログカード */
 .blog-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    display: grid; /* カードをグリッドレイアウトで配置 */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 幅が250pxを下回らないよう調整しつつ、カードを自動で並べる */
+    gap: 20px; /* 各カードの間隔を20pxに設定 */
+    padding: 20px; /* コンテナの内側に余白を追加 */
 }
 
-.blog-card{
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.blog-card {
+    background-color: #fff; /* カードの背景色を白に設定 */
+    border-radius: 12px; /* カードの角を丸くする */
+    overflow: hidden; /* カードの中身が枠からはみ出さないようにする */
+    width: 100%; /* カードの幅を親要素に合わせる */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* マウスホバー時のアニメーションを設定 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 初期状態の影を設定 */
 }
 
 .blog-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px) scale(1.02); /* マウスホバー時にカードを少し浮かせる効果 */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* ホバー時に影を強調 */
 }
 
 .blog-thumbnail {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #f0f0f0;
+    width: 100%; /* サムネイル画像の幅を親要素に合わせる */
+    height: 200px; /* サムネイル画像の高さを200pxに固定 */
+    object-fit: cover; /* 画像を枠に収める（縦横比を保つ） */
+    border-bottom: 1px solid #eaeaea; /* サムネイルと本文の間に境界線を引く */
+    transition: filter 0.3s ease; /* マウスホバー時のフィルターアニメーションを設定 */
+}
+
+.blog-card:hover .blog-thumbnail {
+    filter: brightness(0.9); /* ホバー時に画像を少し暗くする */
 }
 
 .blog-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    padding: 20px; /* カードの本文部分に余白を追加 */
+    display: flex; /* フレックスボックスで配置 */
+    flex-direction: column; /* コンテンツを縦に並べる */
+    align-items: center; /* 中央揃えにする */
 }
 
 .blog-date {
-    font-size: 12px;
-    color: #999;
-    margin-bottom: 8px;
+    font-size: 12px; /* 日付の文字サイズを小さく設定 */
+    color: #888; /* 日付の文字色を薄めのグレーに設定 */
+    margin-bottom: 8px; /* 日付と他のコンテンツの間に余白を追加 */
 }
 
 .blog-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin: 10px 0;
+    font-size: 18px; /* タイトルの文字サイズを設定 */
+    font-weight: bold; /* タイトルを太字にする */
+    color: #222; /* タイトルの文字色をやや濃い色に設定 */
+    text-align: center; /* タイトルを中央揃えにする */
+    margin: 10px 0; /* タイトル上下に余白を追加 */
 }
 
 .blog-summary {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
-    text-align: center;
+    font-size: 14px; /* 本文要約の文字サイズを設定 */
+    color: #555; /* 本文要約の文字色を設定 */
+    line-height: 1.6; /* 行間を広げて読みやすくする */
+    text-align: center; /* 本文要約を中央揃えにする */
 }
 
 /* ブログ詳細ページ */
 .blog-detail-container {
-    max-width: 800px;
-    margin: 40px auto; /* 上下の余白を広げる */
-    padding: 20px;
-    background-color: #fff; /* コンテナの背景色を白に設定 */
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ソフトな影 */
+    max-width: 800px; /* 詳細ページ全体の幅を800pxに制限 */
+    margin: 40px auto; /* 上下に40px、左右中央揃えの余白を設定 */
+    padding: 25px; /* 詳細ページ内側に余白を追加 */
+    background-color: #fff; /* 詳細ページの背景色を白に設定 */
+    border-radius: 12px; /* 詳細ページの角を丸くする */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 詳細ページに薄い影を設定 */
 }
 
 .blog-detail-container .blog-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-    color: #222;
+    font-size: 2.2rem; /* タイトルの文字サイズを大きくする */
+    font-weight: bold; /* タイトルを太字にする */
+    margin-bottom: 15px; /* タイトル下に余白を追加 */
+    text-align: center; /* タイトルを中央揃えにする */
+    color: #222; /* タイトルの文字色を濃くする */
 }
 
 .blog-detail-container .blog-thumbnail {
-    width: 100%;
-    height: auto;
-    margin: 20px 0;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 画像の影 */
-    max-height: 400px; /* 最大高さを設定 */
+    width: 100%; /* サムネイル画像の幅を親要素に合わせる */
+    height: auto; /* サムネイル画像の高さを自動調整 */
+    margin: 20px 0; /* サムネイル上下に余白を追加 */
+    object-fit: cover; /* 画像を枠に収める（縦横比を保つ） */
+    border-radius: 8px; /* サムネイル画像の角を少し丸める */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* サムネイル画像に薄い影を設定 */
+    max-height: 400px; /* サムネイル画像の最大高さを400pxに制限 */
 }
 
 .blog-detail-container .blog-date {
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 0.9rem; /* 日付の文字サイズを小さく調整 */
+    color: #666; /* 日付の文字色を薄いグレーに設定 */
+    text-align: center; /* 日付を中央揃えにする */
+    margin-bottom: 20px; /* 日付と次の要素の間に余白を追加 */
 }
 
 .blog-detail-container .blog-body {
-    font-size: 1.2rem;
-    color: #444;
-    line-height: 1.8;
-    margin-top: 20px;
-    text-align: justify;
+    font-size: 1.1rem; /* 本文の文字サイズをやや大きく設定 */
+    color: #444; /* 本文の文字色を落ち着いたグレーに設定 */
+    line-height: 1.8; /* 行間を広げて読みやすくする */
+    margin-top: 20px; /* 本文の上に余白を追加 */
+    text-align: justify; /* 本文を両端揃えにして見栄えを整える */
 }
 
-.blog-detail-container .blog-body img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
+/* カテゴリセクション */
+.category-section {
+    margin-bottom: 40px; /* セクションの下に余白を追加して次の要素と区切る */
+    padding: 20px; /* セクション全体の内側に余白を追加 */
+    border-radius: 8px; /* セクションの角を丸くする */
+    transition: background-color 0.3s ease; /* 背景色が変化するアニメーションを設定 */
 }
 
-.blog-detail-container .blog-body ul {
-    padding-left: 20px;
-    margin: 20px 0;
+/* カテゴリごとの背景色 */
+.category-section.technology {
+    background-color: #e3f2fd; /* テクノロジーセクションの背景色を青系に設定 */
 }
 
-.blog-detail-container .blog-body ul li {
-    list-style-type: disc;
-    margin-bottom: 10px;
+.category-section.lifestyle {
+    background-color: #f9fbe7; /* ライフスタイルセクションの背景色を緑系に設定 */
 }
 
-.blog-detail-container .blog-body a {
-    color: #007bff;
-    text-decoration: none;
+.category-section.business {
+    background-color: #ffebee; /* ビジネスセクションの背景色を赤系に設定 */
 }
 
-.blog-detail-container .blog-body a:hover {
-    text-decoration: underline;
+.category-section.その他 {
+    background-color: #ede7f6; /* その他セクションの背景色を紫系に設定 */
+}
+
+.category-title-box {
+    background-color: #e9ecef; /* タイトルボックスの背景色を薄いグレーに設定 */
+    padding: 15px; /* ボックス内側に余白を追加 */
+    border-left: 5px solid #000000; /* 左側に黒い太い線を追加して強調 */
+    margin-bottom: 20px; /* タイトルボックス下に余白を追加 */
+}
+
+.category-title {
+    font-size: 1.5rem; /* カテゴリタイトルの文字サイズを大きく設定 */
+    color: #333; /* タイトルの文字色を濃いグレーに設定 */
+    margin: 0; /* タイトルの余白をなくす */
+}
+
+/* カテゴリページのブログカード (横向き) */
+.category-blogs-vertical {
+    display: flex; /* フレックスボックスで配置 */
+    flex-direction: column; /* カードを縦に並べる */
+    gap: 15px; /* 各カードの間隔を15pxに設定 */
+}
+
+.blog-card-vertical {
+    display: flex; /* フレックスボックスで横向きに配置 */
+    background-color: #fff; /* カードの背景色を白に設定 */
+    border-radius: 12px; /* カードの角を丸くする */
+    overflow: hidden; /* 中身が枠からはみ出さないようにする */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* カードに薄い影を設定 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーションを設定 */
+}
+
+.blog-card-vertical:hover {
+    transform: translateY(-5px) scale(1.02); /* マウスホバー時にカードを少し浮かせる */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* ホバー時の影を強調 */
+}
+
+.blog-thumbnail-vertical {
+    flex: 0 0 150px; /* サムネイル画像の幅と高さを固定 */
+    width: 150px; /* サムネイル画像の幅を150pxに設定 */
+    height: 150px; /* サムネイル画像の高さを150pxに設定 */
+    object-fit: cover; /* 画像を枠に収める（縦横比を保つ） */
+    border-right: 1px solid #eaeaea; /* 画像と本文の間に境界線を追加 */
+}
+
+.blog-content-vertical {
+    padding: 15px; /* 本文部分に余白を追加 */
+    display: flex; /* フレックスボックスで配置 */
+    flex-direction: column; /* コンテンツを縦に並べる */
+    justify-content: center; /* コンテンツを中央揃えにする */
+    flex: 1; /* コンテンツ部分をサムネイルとバランス良く広げる */
+}
+
+.blog-content-vertical .blog-date {
+    font-size: 12px; /* 日付の文字サイズを小さく設定 */
+    color: #888; /* 日付の文字色を薄いグレーに設定 */
+    margin-bottom: 5px; /* 日付と他の要素の間に余白を追加 */
+}
+
+.blog-content-vertical .blog-title {
+    font-size: 16px; /* タイトルの文字サイズを設定 */
+    font-weight: bold; /* タイトルを太字にする */
+    margin: 5px 0; /* タイトル上下に余白を追加 */
+    color: #222; /* タイトルの文字色を濃いグレーに設定 */
+}
+
+.blog-content-vertical .blog-summary {
+    font-size: 14px; /* 本文要約の文字サイズを設定 */
+    color: #555; /* 本文要約の文字色を設定 */
+    line-height: 1.4; /* 行間を広げて読みやすくする */
+    margin-top: 5px; /* 本文要約の上に余白を追加 */
 }
 
 /* モバイル対応 */
 @media (max-width: 768px) {
     .blog-detail-container {
-        padding: 15px;
+        padding: 15px; /* 詳細ページの余白を縮小して画面に収める */
     }
 
     .blog-detail-container .blog-title {
-        font-size: 2rem;
+        font-size: 1.8rem; /* モバイル向けにタイトルの文字サイズを少し小さく設定 */
+    }
+
+    .blog-card-vertical {
+        flex-direction: column; /* カードを縦向きに配置 */
+    }
+
+    .blog-thumbnail-vertical {
+        flex: none; /* サムネイルのフレックスプロパティを解除 */
+        width: 100%; /* サムネイルを画面幅いっぱいに表示 */
+        height: 150px; /* サムネイルの高さを150pxに固定 */
+        border-right: none; /* サムネイルの右側の境界線を削除 */
+        border-bottom: 1px solid #eaeaea; /* サムネイルの下に境界線を追加 */
     }
 }
-
-.category-section {
-    margin-bottom: 2rem;
-  }
-  
-  .category-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .category-blogs {
-    margin-top:20px;
-    align-items:center;
-  }
-  
-
-  /* 全体構造 */
-.blog-container {
-    padding: 20px;
-  }
-  
-  /* カテゴリセクション */
-  .category-section {
-    margin-bottom: 40px;
-  }
-  
-
-  .category-title-box {
-    background-color: #f4f4f4;
-    padding: 10px 20px;
-    border-left: 5px solid #000000; /* カテゴリを強調 */
-    margin-bottom: 20px;
-  }
-  
