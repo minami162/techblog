@@ -39,3 +39,25 @@
     border:1px;
     margin-top:5px;
   }
+
+  .button {
+    width: 150px;
+    padding: 12px 24px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+  }
+  
+  .button.active {
+    background-color: #333; /* アクティブ状態の背景色 */
+    color: #fff; /* アクティブ状態の文字色 */
+    border: 2px solid #000; /* 太い枠線 */
+  }
+  
+  
