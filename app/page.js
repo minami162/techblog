@@ -12,7 +12,7 @@ const BlogPage = async () => {
   return (
     <div className="top-page"> {/* トップページ用のクラスを追加 */}
       <Header />
-      <PageTitle title="ブログ一覧" title_en="blog" />
+      <PageTitle title="ブログ一覧" title_en="blogs" />
 
       <div className="blog-container">
         {/* データが存在する場合、カードを表示 */}
@@ -20,19 +20,20 @@ const BlogPage = async () => {
           blogs.map((blog) => (
             <Link key={blog.id} href={`/techblog/${blog.id}`} passHref>
               <div className="blog-card">
-                {/* サムネイル画像 */}
-                {blog.thumbnail && (
-                  <img
-                    src={blog.thumbnail.url}
-                    alt={blog.title}
-                    className="blog-thumbnail"
-                  />
-                )}
-                <div className="blog-content">
-                  {/* 日付 */}
-                  <p className="blog-date">
-                    {new Date(blog.date).toLocaleDateString()}
+                {/* サムネイル画像とカテゴリ */}
+                <div className="blog-thumbnail-container">
+                  <p className="blog-category-overlay">
+                    {blog.category || '未分類'} {/* カテゴリがない場合は「未分類」を表示 */}
                   </p>
+                  {blog.thumbnail && (
+                    <img
+                      src={blog.thumbnail.url}
+                      alt={blog.title}
+                      className="blog-thumbnail"
+                    />
+                  )}
+                </div>
+                <div className="blog-content">
                   {/* タイトル */}
                   <h4 className="blog-title">{blog.title}</h4>
                   {/* 概要 */}

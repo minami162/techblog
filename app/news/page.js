@@ -1,3 +1,6 @@
+
+
+
 import { getBlogs } from '@/libs/client';
 import Link from 'next/link'; // Linkコンポーネントをインポート
 
@@ -20,19 +23,20 @@ const BlogPage = async () => {
           blogs.map((blog) => (
             <Link key={blog.id} href={`/techblog/${blog.id}`} passHref>
               <div className="blog-card">
-                {/* サムネイル画像 */}
-                {blog.thumbnail && (
-                  <img
-                    src={blog.thumbnail.url}
-                    alt={blog.title}
-                    className="blog-thumbnail"
-                  />
-                )}
-                <div className="blog-content">
-                  {/* 日付 */}
-                  <p className="blog-date">
+                {/* サムネイル画像と投稿日 */}
+                <div className="blog-thumbnail-container">
+                  <p className="blog-date-overlay">
                     {new Date(blog.date).toLocaleDateString()}
                   </p>
+                  {blog.thumbnail && (
+                    <img
+                      src={blog.thumbnail.url}
+                      alt={blog.title}
+                      className="blog-thumbnail"
+                    />
+                  )}
+                </div>
+                <div className="blog-content">
                   {/* タイトル */}
                   <h4 className="blog-title">{blog.title}</h4>
                   {/* 概要 */}
