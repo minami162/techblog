@@ -232,3 +232,55 @@ body {
  }
 }
 
+/* ボタン全体を中央配置するコンテナ */
+.read-more-container {
+    position: relative; /* 親要素内の配置を基準 */
+    display: flex; /* フレックスボックスで配置制御 */
+    justify-content: center; /* 水平方向中央揃え */
+    align-items: center; /* 垂直方向中央揃え */
+    height: 300px; /* ボタンを配置する高さを調整 */
+    text-align: center; /* テキスト中央揃え */
+}
+
+/* ボタンのデザイン */
+.read-more-button {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    transition: all 0.3s ease;
+    outline: none; /* ボタンのフォーカスリングを非表示 */
+}
+
+
+.read-more-button::before {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.read-more-button::after {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.read-more-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0; /* 初期状態では塗りつぶしなし */
+    height: 100%;
+    background-color: black; /* 塗りつぶし時の背景色 */
+    z-index: -1; /* 背景を文字の後ろに配置 */
+    transition: width 0.4s ease; /* 塗りつぶしのアニメーション */
+}
+
+
+
