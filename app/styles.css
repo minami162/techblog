@@ -222,10 +222,13 @@ body {
     }
 
     .blog-thumbnail-vertical {
-        
-        object-fit: cover;
-        border-right: 1px solid #eaeaea;
-    }
+        width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    display: block;
+    height: 200px;
+    border-bottom: 1px solid #eaeaea;
+    border-radius:5px;
+ }
 }
-
 
