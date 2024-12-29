@@ -230,67 +230,8 @@ body {
     border-bottom: 1px solid #eaeaea;
     border-radius:5px;
  }
-
-
- /* ボタン全体を中央配置するコンテナ */
-.read-more-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    text-align: center;
+ 
 }
-
-/* ボタンのデザイン */
-.read-more-button {
-    position: relative;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333; /* 初期の文字色 */
-    background-color: transparent; /* 初期は背景なし */
-    border: 2px solid #333; /* ボタンの枠線 */
-    padding: 10px 20px; /* ボタン内の余白 */
-    cursor: pointer;
-    overflow: hidden; /* アニメーション部分を隠す */
-    transition: color 0.3s ease; /* テキスト色のスムーズな変化 */
-    z-index: 0;
-}
-
-/* 背景塗りつぶし用の要素 */
-.read-more-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0; /* 初期状態では塗りつぶしなし */
-    height: 100%;
-    background-color: black; /* 塗りつぶし時の背景色 */
-    z-index: -1; /* 背景を文字の後ろに配置 */
-    transition: width 0.4s ease; /* 塗りつぶしのアニメーション */
-}
-
-/* ホバー時のエフェクト */
-.read-more-button:hover {
-    color: white; /* ホバー時の文字色 */
-}
-
-.read-more-button:hover::before {
-    width: 100%; /* 背景を左から右に全体塗りつぶし */
-}
-
-/* 押下時のエフェクト */
-.read-more-button:active {
-    transform: scale(0.98); /* 少し縮小 */
-}
-
-
-}
-
-
-
-
 
 
 
@@ -306,13 +247,10 @@ body {
     align-items: center;
     height: 50px;
     text-align: center;
-    width:400px;
-    margin: 0 auto; /* 左右方向の中央配置 */
-    margin-top:80px;
-    margin-bottom:80px;
+    width: 90%; /* レスポンシブ対応のため幅を%で指定 */
+    max-width: 400px; /* 最大幅を400pxに制限 */
+    margin: 80px auto; /* 上下左右方向の中央配置 */
 }
-
-
 
 /* コンテナ上部と下部にラインを配置 */
 .read-more-container::before,
@@ -325,12 +263,6 @@ body {
     background-color: black; /* ラインの色 */
     transition: background-color 0.3s ease;
 }
-
-
-
-
-
-
 
 .read-more-container::before {
     top: 0; /* 上部ラインの位置 */
@@ -354,7 +286,8 @@ body {
     overflow: hidden; /* アニメーション部分を隠す */
     transition: color 0.3s ease; /* テキスト色のスムーズな変化 */
     z-index: 0;
-    width: 400px;
+    width: 100%; /* ボタン幅を親要素に合わせる */
+    max-width: 400px; /* 最大幅を400pxに制限 */
 }
 
 /* 背景塗りつぶし用の要素 */
