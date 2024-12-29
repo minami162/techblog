@@ -230,6 +230,19 @@ body {
     border-bottom: 1px solid #eaeaea;
     border-radius:5px;
  }
+
+ .read-more-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    text-align: center;
+    width:400px;
+    margin: 0 auto; /* 左右方向の中央配置 */
+    margin-top:80px;
+    margin-bottom:80px;
+}
 }
 
 
