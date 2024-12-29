@@ -247,7 +247,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 43px;
+    height: 50px;
     text-align: center;
     width:400px;
     margin: 0 auto; /* 左右方向の中央配置 */
@@ -292,7 +292,7 @@ body {
     color: #333; /* 初期の文字色 */
     background-color: transparent; /* 初期は背景なし */
     border: none; /* ボタン枠線なし */
-    padding: 10px 20px; /* ボタン内の余白 */
+    padding: 15px 20px; /* ボタン内の余白 */
     cursor: pointer;
     overflow: hidden; /* アニメーション部分を隠す */
     transition: color 0.3s ease; /* テキスト色のスムーズな変化 */
