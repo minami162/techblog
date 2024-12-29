@@ -230,16 +230,53 @@ body {
     border-bottom: 1px solid #eaeaea;
     border-radius:5px;
  }
-
- /* ボタン全体を中央配置するコンテナ */
+/* ボタン全体を中央配置するコンテナ */
 .read-more-container {
+    position: relative; /* 親要素内の配置を基準 */
+    display: flex; /* フレックスボックスで配置制御 */
+    justify-content: center; /* 水平方向中央揃え */
+    align-items: center; /* 垂直方向中央揃え */
+    height: 300px; /* ボタンを配置する高さを調整 */
+    text-align: center; /* テキスト中央揃え */
+}
+
+
+/* ボタンのデザイン */
+.read-more-button {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 400px;
-    margin: 0 auto; /* 左右方向の中央配置 */
+    transition: all 0.3s ease;
+    outline: none; /* ボタンのフォーカスリングを非表示 */
+}
+
+.read-more-button::before,
+.read-more-button::after {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.read-more-button::before {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.read-more-button::after {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
