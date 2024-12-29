@@ -231,18 +231,20 @@ body {
     border-radius:5px;
  }
 
- .read-more-container {
+ /* ボタン全体を中央配置するコンテナ */
+.read-more-container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
     text-align: center;
-    width:400px;
+    width: 400px;
     margin: 0 auto; /* 左右方向の中央配置 */
+}
+
 
 }
-}
+
 
 
 
