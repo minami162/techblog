@@ -1,5 +1,5 @@
 import { getBlogById } from '@/libs/client';
-import '@/app/styles.css'; // スタイルシートをインポート
+import './techblogDetail.css'; // スタイルシートをインポート
 
 const BlogDetailPage = async ({ params }) => {
   const blog = await getBlogById(params.id);
@@ -33,8 +33,10 @@ const BlogDetailPage = async ({ params }) => {
 
       {/* 記事内容 */}
       <div
-        className="blog-body"
-        dangerouslySetInnerHTML={{ __html: blog.body }}
+        className="blog-body preserve-whitespace" // CSSで改行を反映
+        dangerouslySetInnerHTML={{
+          __html: blog.body.replace(/\n/g, '<br>') // 改行コードを <br> タグに変換
+        }}
       ></div>
     </div>
   );

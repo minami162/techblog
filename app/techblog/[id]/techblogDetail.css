@@ -1,65 +1,90 @@
-/* app/techblog/[id]/techblogDetail.css */
+/* 詳細ページ */
+/* 改行を反映するスタイル */
+.preserve-whitespace {
+    white-space: pre-wrap; /* 改行や余白をそのまま表示 */
+    word-wrap: break-word; /* 長い単語で改行可能にする */
+}
+
 .blog-detail-container {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-detail-container .blog-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+/* カテゴリセクション */
+.category-section {
+    margin-bottom: 40px;
     padding: 20px;
-    background-color: #fff; /* コンテナ背景色（白） */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .blog-title {
-    font-size: 2.5rem;
-    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.category-section.technology {
+    background-color: #e3f2fd;
+}
+
+.category-section.lifestyle {
+    background-color: #f9fbe7;
+}
+
+.category-section.business {
+    background-color: #ffebee;
+}
+
+.category-section.その他 {
+    background-color: #ede7f6;
+}
+
+.category-title-box {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-left: 5px solid #000;
     margin-bottom: 20px;
-    text-align: center;
+}
+
+.category-title {
+    font-size: 1.5rem;
     color: #333;
-  }
-  
-  .blog-thumbnail {
-    width: 100%; /* 幅をコンテナに合わせる */
-    height: auto; /* 高さは自動調整 */
-    border-radius: 8px;
-    margin-bottom: 20px;
-    object-fit: cover; /* 画像が枠にフィットするように */
-    max-height: 500px; /* 最大高さを500pxに設定（必要に応じて調整） */
-  }
-  
-  .blog-date {
-    font-size: 1.2rem;
-    color: #888;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .blog-body {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-  }
-  
-  .blog-body img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-  }
-  
-  .blog-body ul {
-    margin: 20px 0;
-  }
-  
-  .blog-body a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .blog-body a:hover {
-    text-decoration: underline;
-  }
-  
-  /* ページ全体の背景色を指定 */
-  body {
-    background-color: #f8f8f8; /* URLページの背景色 */
-  }
-  
+    margin: 0;
+}
+
+/* サムネイル共通スタイル */
+.blog-thumbnail {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: block;
+  height: 200px;
+  border-bottom: 1px solid #eaeaea;
+  border-radius:5px;
+}
+
+.blog-thumbnail:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.blog-thumbnail-container {
+  position: relative;
+  /* 改行を反映するスタイル */
+.preserve-whitespace {
+  white-space: pre-wrap; /* 改行や余白をそのまま表示 */
+  word-wrap: break-word; /* 長い単語で改行可能にする */
+  line-height: 1.6; /* 行間を少し広げて読みやすく */
+  font-size: 1rem; /* 適切なフォントサイズ */
+}
+
+.blog-detail-container .blog-body {
+  margin-top: 20px;
+}
+
+  width: 100%;
+}
