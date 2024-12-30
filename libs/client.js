@@ -8,15 +8,31 @@ export const client = createClient({
 
 // APIからリスト形式のデータを取得する関数
 export const getBlogs = async () => {
+  const blogs = [];
+  let offset = 0;
+  const limit = 100;
+
   try {
-    // 'techblog' エンドポイントからデータを取得
-    const data = await client.get({ endpoint: 'techblog' });
-    return data.contents; // リストデータを返す
+    while (true) {
+      const data = await client.get({
+        endpoint: 'techblog',
+        queries: { limit, offset }
+      });
+
+      blogs.push(...data.contents);
+      if (data.contents.length < limit) break; // これ以上データがない場合終了
+
+      offset += limit; // 次のページに進む
+    }
+
+    return blogs;
   } catch (error) {
     console.error('API連携エラー:', error.response || error.message);
     return []; // エラー時は空のリストを返す
   }
 };
+
+
 
 // APIから個別の記事データを取得する関数
 export const getBlogById = async (id) => {
