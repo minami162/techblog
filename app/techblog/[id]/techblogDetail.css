@@ -6,13 +6,13 @@
     background-color: #fff; /* コンテナ背景色（白） */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top:50px;
+
   }
   
   .blog-title {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin: 30px;
     text-align: center;
     color: #333;
   }
@@ -21,13 +21,13 @@
     width: 100%; /* 幅をコンテナに合わせる */
     height: auto; /* 高さは自動調整 */
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     object-fit: cover; /* 画像が枠にフィットするように */
     max-height: 500px; /* 最大高さを500pxに設定（必要に応じて調整） */
   }
   
   .blog-date {
-    margin-top:30px;
+    margin-top:20px;
     font-size: 1.0rem;
     color: #888;
     text-align: center;
