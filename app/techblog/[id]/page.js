@@ -9,7 +9,7 @@ const BlogDetailPage = async ({ params }) => {
   }
 
   return (
-    <div className="blog-detail-container"> {/* 詳細ページのスタイルクラス */}
+    <div className="blog-detail-container">
       {/* 記事タイトル */}
       <h1 className="blog-title">{blog.title}</h1>
 
@@ -32,12 +32,36 @@ const BlogDetailPage = async ({ params }) => {
       </p>
 
       {/* 記事内容 */}
-      <div
-        className="blog-body preserve-whitespace" // CSSで改行を反映
-        dangerouslySetInnerHTML={{
-          __html: blog.body.replace(/\n/g, '<br>') // 改行コードを <br> タグに変換
-        }}
-      ></div>
+      <div className="blog-body">
+        {Array.isArray(blog.body) ? (
+          blog.body.map((entry, index) => (
+            <div key={index} className="blog-section">
+              {/* リッチエディタの内容 */}
+              {entry.rich_editor && (
+                <div
+                  className="blog-rich-editor preserve-whitespace"
+                  dangerouslySetInnerHTML={{
+                    __html: entry.rich_editor,
+                  }}
+                ></div>
+              )}
+
+              {/* 画像 */}
+              {entry.image && (
+                <img
+                  src={entry.image.url}
+                  alt={`Section ${index + 1}`}
+                  className="blog-section-image"
+                  width={entry.image.width}
+                  height={entry.image.height}
+                />
+              )}
+            </div>
+          ))
+        ) : (
+          <p>記事の内容がありません。</p>
+        )}
+      </div>
     </div>
   );
 };
