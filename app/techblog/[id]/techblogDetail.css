@@ -6,6 +6,7 @@
     background-color: #fff; /* コンテナ背景色（白） */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top:50px;
   }
   
   .blog-title {
@@ -26,13 +27,15 @@
   }
   
   .blog-date {
-    font-size: 1.2rem;
+    margin-top:30px;
+    font-size: 1.0rem;
     color: #888;
     text-align: center;
     margin-bottom: 20px;
   }
   
   .blog-body {
+    margin:50px;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
@@ -66,4 +69,51 @@
   .preserve-whitespace {
     white-space: pre-wrap;
   }
-  
+ 
+  /* 全体のスタイル */
+.blog-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* コードブロックのスタイル */
+pre {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+code {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* タイトル */
+.blog-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 日付 */
+.blog-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+/* リッチエディター */
+.blog-rich-editor {
+  margin-bottom: 2rem;
+}
+
+/* サムネイル画像 */
+.blog-thumbnail {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
